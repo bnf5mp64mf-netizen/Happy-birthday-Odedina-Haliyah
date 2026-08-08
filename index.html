@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For My Babyyyy ❤️</title>
+  <meta name="theme-color" content="#21030f">
+  <title>Happy Birthday, My Babyyyy ❤️</title>
   <style>
     * {
       box-sizing: border-box;
@@ -14,92 +15,76 @@
       scroll-behavior: smooth;
     }
     body {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top, #5a0b2c 0%, #250512 45%, #0e0208 100%);
-      color: white;
+      background: #14020a;
+      color: #fff;
       font-family: Georgia, "Times New Roman", serif;
       overflow-x: hidden;
     }
-    /* =========================
-       FLOATING HEARTS
-    ========================= */
-    .floating-hearts span {
+    /* Floating hearts */
+    .hearts span {
       position: fixed;
-      bottom: -40px;
+      bottom: -50px;
       font-size: 22px;
       pointer-events: none;
-      animation: floatHeart linear infinite;
+      z-index: 2;
+      animation: rise 10s linear infinite;
       opacity: 0;
-      z-index: 1;
     }
-    .floating-hearts span:nth-child(1) {
-      left: 5%;
-      animation-duration: 9s;
-      animation-delay: 1s;
-    }
-    .floating-hearts span:nth-child(2) {
-      left: 20%;
-      animation-duration: 12s;
-      animation-delay: 4s;
-    }
-    .floating-hearts span:nth-child(3) {
-      left: 40%;
-      animation-duration: 10s;
-      animation-delay: 2s;
-    }
-    .floating-hearts span:nth-child(4) {
-      left: 60%;
-      animation-duration: 13s;
-      animation-delay: 5s;
-    }
-    .floating-hearts span:nth-child(5) {
-      left: 80%;
-      animation-duration: 11s;
+    .hearts span:nth-child(1) {
+      left: 8%;
       animation-delay: 0s;
     }
-    .floating-hearts span:nth-child(6) {
-      left: 92%;
-      animation-duration: 14s;
+    .hearts span:nth-child(2) {
+      left: 25%;
       animation-delay: 3s;
+      animation-duration: 12s;
     }
-    @keyframes floatHeart {
+    .hearts span:nth-child(3) {
+      left: 45%;
+      animation-delay: 5s;
+    }
+    .hearts span:nth-child(4) {
+      left: 65%;
+      animation-delay: 1s;
+      animation-duration: 13s;
+    }
+    .hearts span:nth-child(5) {
+      left: 85%;
+      animation-delay: 4s;
+    }
+    @keyframes rise {
       0% {
-        transform: translateY(0) scale(0.8);
+        transform: translateY(0) scale(.7);
         opacity: 0;
       }
       15% {
-        opacity: 0.8;
+        opacity: .8;
       }
       100% {
-        transform: translateY(-115vh) scale(1.4) rotate(20deg);
+        transform: translateY(-115vh) scale(1.3) rotate(20deg);
         opacity: 0;
       }
     }
-    /* =========================
-       MUSIC BUTTON
-    ========================= */
-    .music-button {
+    /* Music */
+    .music-btn {
       position: fixed;
       top: 18px;
       right: 18px;
       z-index: 20;
-      width: 48px;
-      height: 48px;
-      border: 1px solid rgba(255,255,255,0.3);
+      width: 50px;
+      height: 50px;
+      border: 1px solid rgba(255,255,255,.3);
       border-radius: 50%;
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,.12);
       color: white;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       font-size: 20px;
       cursor: pointer;
       display: none;
       align-items: center;
       justify-content: center;
     }
-    /* =========================
-       OPENING
-    ========================= */
+    /* Opening */
     #opening {
       min-height: 100vh;
       display: flex;
@@ -107,67 +92,57 @@
       justify-content: center;
       padding: 25px;
       text-align: center;
-      position: relative;
-      z-index: 5;
+      background:
+        radial-gradient(circle at top, #72163b, #260510 55%, #100107);
     }
-    .opening-box {
+    .opening-card {
       width: 100%;
       max-width: 650px;
       padding: 50px 25px;
-      border-radius: 35px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 32px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.16);
       backdrop-filter: blur(15px);
-      box-shadow:
-        0 25px 80px rgba(0,0,0,0.5);
+      box-shadow: 0 30px 90px rgba(0,0,0,.5);
     }
-    .heart-big {
+    .big-heart {
       font-size: 75px;
+      animation: beat 1.4s infinite;
       margin-bottom: 20px;
-      animation: heartbeat 1.4s infinite;
     }
-    @keyframes heartbeat {
+    @keyframes beat {
       0%, 100% {
         transform: scale(1);
       }
       50% {
-        transform: scale(1.2);
+        transform: scale(1.18);
       }
     }
-    .opening-box h1 {
-      font-size: clamp(38px, 10vw, 68px);
+    .opening-card h1 {
+      font-size: clamp(40px, 10vw, 70px);
       line-height: 1.05;
       margin-bottom: 20px;
     }
-    .opening-box .subtitle {
+    .opening-card p {
       font-family: Arial, sans-serif;
-      font-size: 16px;
-      opacity: 0.8;
       line-height: 1.7;
-      margin-bottom: 35px;
+      opacity: .8;
+      margin-bottom: 30px;
     }
-    .open-button {
+    .open-btn {
+      padding: 16px 30px;
       border: none;
       border-radius: 50px;
-      padding: 17px 32px;
       background: white;
-      color: #8d1744;
-      font-size: 17px;
+      color: #8b1744;
       font-weight: bold;
+      font-size: 16px;
       cursor: pointer;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      transition: 0.3s;
+      box-shadow: 0 12px 30px rgba(0,0,0,.3);
     }
-    .open-button:hover {
-      transform: scale(1.06);
-    }
-    /* =========================
-       MAIN WEBSITE
-    ========================= */
+    /* Main */
     #main {
       display: none;
-      position: relative;
-      z-index: 3;
     }
     .hero {
       min-height: 100vh;
@@ -176,53 +151,53 @@
       justify-content: center;
       text-align: center;
       padding: 80px 20px;
+      background:
+        radial-gradient(circle at top, #651133, #18020b 65%);
     }
     .hero-content {
       max-width: 750px;
     }
-    .hero-small {
+    .small-title {
       font-family: Arial, sans-serif;
-      letter-spacing: 3px;
       text-transform: uppercase;
-      font-size: 13px;
-      opacity: 0.7;
+      letter-spacing: 4px;
+      font-size: 12px;
+      opacity: .6;
       margin-bottom: 20px;
     }
     .hero h2 {
-      font-size: clamp(42px, 11vw, 80px);
+      font-size: clamp(44px, 11vw, 82px);
       line-height: 1.05;
       margin-bottom: 25px;
     }
     .hero p {
-      font-size: 20px;
-      line-height: 1.7;
-      opacity: 0.9;
+      font-size: 19px;
+      line-height: 1.8;
+      opacity: .85;
     }
-    .scroll-note {
+    .scroll {
       margin-top: 45px;
       font-family: Arial, sans-serif;
-      font-size: 13px;
-      opacity: 0.55;
+      font-size: 12px !important;
+      opacity: .5 !important;
     }
-    /* =========================
-       PHOTO SECTION
-    ========================= */
-    .photos {
-      padding: 80px 20px;
-      max-width: 950px;
+    /* Photos */
+    .gallery {
+      padding: 80px 18px;
+      max-width: 1000px;
       margin: auto;
     }
-    .section-heading {
+    .heading {
       text-align: center;
-      margin-bottom: 45px;
+      margin-bottom: 40px;
     }
-    .section-heading h3 {
-      font-size: clamp(30px, 7vw, 48px);
+    .heading h3 {
+      font-size: clamp(32px, 8vw, 52px);
       margin-bottom: 12px;
     }
-    .section-heading p {
+    .heading p {
       font-family: Arial, sans-serif;
-      opacity: 0.7;
+      opacity: .65;
       font-size: 14px;
     }
     .photo-grid {
@@ -231,29 +206,26 @@
       gap: 15px;
     }
     .photo {
-      min-height: 260px;
+      height: 280px;
       border-radius: 22px;
       overflow: hidden;
-      background:
-        linear-gradient(135deg, #5d102f, #270613);
-      border: 1px solid rgba(255,255,255,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      color: rgba(255,255,255,0.7);
-      font-family: Arial, sans-serif;
-      font-size: 14px;
+      background: #310817;
+      border: 1px solid rgba(255,255,255,.15);
+      box-shadow: 0 15px 35px rgba(0,0,0,.35);
     }
     .photo:first-child {
       grid-column: span 2;
-      min-height: 350px;
+      height: 390px;
     }
     .photo img {
       width: 100%;
       height: 100%;
+      display: block;
       object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .photo:hover img {
+      transform: scale(1.05);
     }
     @media (max-width: 600px) {
       .photo-grid {
@@ -261,12 +233,14 @@
       }
       .photo:first-child {
         grid-column: span 1;
+        height: 360px;
+      }
+      .photo {
+        height: 300px;
       }
     }
-    /* =========================
-       LETTER
-    ========================= */
-    .letter-section {
+    /* Letter */
+    .letter-area {
       padding: 70px 15px;
     }
     .letter {
@@ -274,90 +248,83 @@
       margin: auto;
       background: #fff8fa;
       color: #35121f;
-      border-radius: 28px;
+      border-radius: 30px;
       padding: clamp(25px, 7vw, 65px);
-      box-shadow:
-        0 25px 80px rgba(0,0,0,0.45);
+      box-shadow: 0 30px 90px rgba(0,0,0,.45);
     }
-    .letter-top {
+    .letter-title {
       text-align: center;
       margin-bottom: 50px;
     }
-    .letter-top .emoji {
-      font-size: 40px;
+    .letter-title .icon {
+      font-size: 42px;
       margin-bottom: 15px;
     }
-    .letter-top h3 {
+    .letter-title h3 {
       color: #8d1744;
       font-size: clamp(32px, 8vw, 52px);
-      line-height: 1.1;
     }
-    .letter-top p {
-      margin-top: 12px;
+    .letter-title p {
       font-family: Arial, sans-serif;
-      color: #9a6477;
+      color: #9b6678;
       font-size: 13px;
+      margin-top: 10px;
     }
     .letter p {
       font-size: 18px;
       line-height: 1.9;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
-    .divider {
+    .heart-divider {
       text-align: center;
-      color: #c83b68;
+      color: #c83267;
       font-size: 22px;
-      margin: 45px 0;
-      letter-spacing: 7px;
+      margin: 42px 0;
+      letter-spacing: 8px;
     }
-    .quote {
+    .special {
       text-align: center;
       color: #8d1744;
-      font-size: 23px !important;
+      font-size: 24px !important;
       font-style: italic;
-      margin: 35px 0;
     }
-    /* =========================
-       SPECIAL FIRST KISS
-    ========================= */
+    /* Kiss */
     .kiss-section {
-      padding: 90px 20px;
+      padding: 100px 20px;
       text-align: center;
       background:
-        radial-gradient(circle, #651134, #20030e);
+        radial-gradient(circle, #70143c, #21030f 65%);
     }
     .kiss-content {
       max-width: 700px;
       margin: auto;
     }
-    .kiss-content .kiss {
-      font-size: 60px;
+    .kiss-icon {
+      font-size: 65px;
       margin-bottom: 25px;
     }
     .kiss-content h3 {
-      font-size: clamp(32px, 8vw, 55px);
+      font-size: clamp(35px, 9vw, 58px);
       margin-bottom: 25px;
     }
     .kiss-content p {
       font-size: 19px;
       line-height: 1.8;
-      opacity: 0.9;
+      opacity: .9;
       margin-bottom: 18px;
     }
-    .kiss-line {
-      font-size: 24px !important;
+    .kiss-special {
+      font-size: 25px !important;
       margin-top: 35px;
     }
-    /* =========================
-       FINAL MESSAGE
-    ========================= */
+    /* Ending */
     .ending {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 80px 20px;
       text-align: center;
+      padding: 80px 20px;
     }
     .ending-content {
       max-width: 700px;
@@ -367,143 +334,127 @@
       margin-bottom: 25px;
     }
     .ending h3 {
-      font-size: clamp(35px, 9vw, 65px);
-      line-height: 1.1;
+      font-size: clamp(38px, 10vw, 68px);
+      line-height: 1.05;
       margin-bottom: 30px;
     }
     .ending p {
       font-size: 19px;
       line-height: 1.8;
-      opacity: 0.85;
+      opacity: .85;
     }
-    .final-love {
-      margin-top: 35px;
-      font-size: 32px !important;
+    .love {
+      font-size: 34px !important;
       opacity: 1 !important;
+      margin-top: 30px;
     }
     .ps {
       margin-top: 45px;
       padding: 20px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      font-size: 16px !important;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      font-size: 15px !important;
       font-style: italic;
     }
-    .footer {
+    footer {
       text-align: center;
-      padding: 30px 20px 50px;
+      padding: 30px;
       font-family: Arial, sans-serif;
-      font-size: 12px;
-      opacity: 0.4;
+      font-size: 11px;
+      opacity: .4;
     }
   </style>
 </head>
 <body>
   <!-- FLOATING HEARTS -->
-  <div class="floating-hearts">
+  <div class="hearts">
     <span>❤️</span>
     <span>💕</span>
     <span>💗</span>
     <span>❤️</span>
     <span>💖</span>
-    <span>💕</span>
   </div>
-  <!-- MUSIC BUTTON -->
-  <button class="music-button" id="musicButton" onclick="toggleMusic()">
+  <!-- MUSIC -->
+  <button class="music-btn" id="musicButton" onclick="toggleMusic()">
     🎵
   </button>
-  <!--
-    MUSIC:
-    Later we will add your MP3 file to GitHub.
-  -->
   <audio id="music" loop>
     <source src="music.mp3" type="audio/mpeg">
   </audio>
-  <!-- =========================
-       OPENING SCREEN
-  ========================= -->
+  <!-- OPENING -->
   <section id="opening">
-<div class="opening-box">
-  <div class="heart-big">
+<div class="opening-card">
+  <div class="big-heart">
     ❤️
   </div>
   <h1>
     Happy Birthday,<br>
     My Babyyyy
   </h1>
-  <p class="subtitle">
-    I made something for you.<br>
+  <p>
+    I made something special for you.<br>
     Something from my heart to yours. 🥹❤️
   </p>
-  <button class="open-button" onclick="openWebsite()">
-    Open your surprise 💌
+  <button class="open-btn" onclick="openSurprise()">
+    Open Your Surprise 💌
   </button>
 </div>
   </section>
-  <!-- =========================
-       MAIN WEBSITE
-  ========================= -->
-  <div id="main">
+  <!-- MAIN WEBSITE -->
+  <main id="main">
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <p class="hero-small">
+    <div class="small-title">
       A letter from me to you
-    </p>
+    </div>
     <h2>
       Happy Birthday,<br>
       My Heart ❤️
     </h2>
     <p>
-      Today is about you.<br>
+      Today is your day.<br>
       So take your time and read this...
     </p>
-    <p class="scroll-note">
+    <p class="scroll">
       ↓ Keep scrolling, beautiful ↓
     </p>
   </div>
 </section>
-<!-- =========================
-     PHOTOS
-========================= -->
-<section class="photos">
-  <div class="section-heading">
+<!-- PHOTO GALLERY -->
+<section class="gallery">
+  <div class="heading">
     <h3>
       Our Little Memories 📸
     </h3>
     <p>
-      A few moments I'd love to keep forever.
+      Some moments I would love to keep forever.
     </p>
   </div>
   <div class="photo-grid">
-    <!--
-      PHOTO 1
-      Later replace this box with your photo.
-    -->
     <div class="photo">
-      📸<br><br>
-      Your favorite picture of her goes here ❤️
+      <img src="IMG_6158.png" alt="Our beautiful memory">
     </div>
-    <!-- PHOTO 2 -->
     <div class="photo">
-      📸<br><br>
-      Another memory 💕
+      <img src="IMG_6117.png" alt="Our beautiful memory">
     </div>
-    <!-- PHOTO 3 -->
     <div class="photo">
-      📸<br><br>
-      Another beautiful moment ❤️
+      <img src="IMG_6106.png" alt="Our beautiful memory">
+    </div>
+    <div class="photo">
+      <img src="IMG_6029.png" alt="Our beautiful memory">
+    </div>
+    <div class="photo">
+      <img src="IMG_6689.png" alt="Our beautiful memory">
     </div>
   </div>
 </section>
-<!-- =========================
-     LETTER
-========================= -->
-<section class="letter-section">
+<!-- LOVE LETTER -->
+<section class="letter-area">
   <article class="letter">
-    <div class="letter-top">
-      <div class="emoji">
+    <div class="letter-title">
+      <div class="icon">
         💌
       </div>
       <h3>
@@ -532,7 +483,7 @@
     <p>
       And honestly, I’m glad you did.
     </p>
-    <div class="divider">
+    <div class="heart-divider">
       ❤️ • ❤️ • ❤️
     </div>
     <p>
@@ -555,7 +506,7 @@
     <p>
       Look at you.
     </p>
-    <p class="quote">
+    <p class="special">
       My girl. ❤️
     </p>
     <p>
@@ -613,7 +564,7 @@
     <p>
       And somehow, it’s still us.
     </p>
-    <div class="divider">
+    <div class="heart-divider">
       💗 • 💗 • 💗
     </div>
     <p>
@@ -680,7 +631,7 @@
     <p>
       And selfishly…
     </p>
-    <p class="quote">
+    <p class="special">
       I hope I’m there for a lot of those memories.
     </p>
     <p>
@@ -695,7 +646,7 @@
     <p>
       And yes…
     </p>
-    <p class="quote">
+    <p class="special">
       I still think about that first kiss. 😭❤️
     </p>
     <p>
@@ -736,7 +687,7 @@
       After all the “what ifs.”
       After all the times we’ve imagined it.
     </p>
-    <p class="quote">
+    <p class="special">
       Just us.
     </p>
     <p>
@@ -748,7 +699,7 @@
     <p>
       I’m looking forward to that moment.
     </p>
-    <div class="divider">
+    <div class="heart-divider">
       ❤️ • ❤️ • ❤️
     </div>
     <p>
@@ -801,7 +752,7 @@
     <p>
       Maybe you’d finally understand why I call you my girl.
     </p>
-    <p class="quote">
+    <p class="special">
       Because you are.
     </p>
     <p>
@@ -812,7 +763,7 @@
       My favorite person to hear from.
       And somehow, one of my favorite parts of my life.
     </p>
-    <div class="divider">
+    <div class="heart-divider">
       💖 • 💖 • 💖
     </div>
     <p>
@@ -848,7 +799,7 @@
       So many “I miss yous.”
       And yes…
     </p>
-    <p class="quote">
+    <p class="special">
       That first kiss we’ve talked about approximately 847 times. 😭❤️
     </p>
     <p>
@@ -872,7 +823,7 @@
     <p>
       And I hope as you start this new chapter, you remember one thing:
     </p>
-    <p class="quote">
+    <p class="special">
       No matter how much you grow, how much changes, or how many birthdays come after this one…
     </p>
     <p>
@@ -880,12 +831,10 @@
     </p>
   </article>
 </section>
-<!-- =========================
-     FIRST KISS SECTION
-========================= -->
+<!-- FIRST KISS -->
 <section class="kiss-section">
   <div class="kiss-content">
-    <div class="kiss">
+    <div class="kiss-icon">
       💋❤️
     </div>
     <h3>
@@ -905,15 +854,13 @@
     <p>
       I just want it to be ours.
     </p>
-    <p class="kiss-line">
+    <p class="kiss-special">
       And yes, baby...<br>
       I'm still looking forward to it. ❤️
     </p>
   </div>
 </section>
-<!-- =========================
-     FINAL MESSAGE
-========================= -->
+<!-- ENDING -->
 <section class="ending">
   <div class="ending-content">
     <div class="infinity">
@@ -929,18 +876,18 @@
       Happy birthday, my favorite headache. 😭<br>
       Happy birthday, mi corazón.
     </p>
-    <p style="margin-top: 25px;">
+    <p style="margin-top:25px;">
       Happy birthday to the girl who somehow became
       one of the most important people in my world.
     </p>
-    <p class="final-love">
+    <p class="love">
       I love you. ❤️
     </p>
-    <p style="margin-top: 20px;">
+    <p style="margin-top:20px;">
       And I can't wait to see what this next chapter
       brings for you...
     </p>
-    <p class="final-love">
+    <p class="love">
       and for us. ❤️♾️
     </p>
     <div class="ps">
@@ -950,26 +897,19 @@
     </div>
   </div>
 </section>
-<div class="footer">
+<footer>
   Made with love, just for you. ❤️
-</div>
-  </div>
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
+</footer>
+  </main>
   <script>
     const music = document.getElementById("music");
     const musicButton = document.getElementById("musicButton");
-    function openWebsite() {
+    function openSurprise() {
       document.getElementById("opening").style.display = "none";
       document.getElementById("main").style.display = "block";
       musicButton.style.display = "flex";
-      /*
-        We try to start the music after
-        the user taps the opening button.
-      */
       music.play().catch(function() {
-        console.log("Music needs to be started manually.");
+        musicButton.innerHTML = "🎵";
       });
       window.scrollTo(0, 0);
     }
