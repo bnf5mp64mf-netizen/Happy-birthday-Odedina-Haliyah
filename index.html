@@ -3,70 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday, My Babyyyy ❤️</title>
+  <title>For My Babyyyy ❤️</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       min-height: 100vh;
-      background: linear-gradient(135deg, #16000b, #3b071c, #19000d);
-      color: #fff;
+      background:
+        radial-gradient(circle at top, #5a0b2c 0%, #250512 45%, #0e0208 100%);
+      color: white;
       font-family: Georgia, "Times New Roman", serif;
       overflow-x: hidden;
     }
-    /* Floating hearts */
-    .heart {
+    /* =========================
+       FLOATING HEARTS
+    ========================= */
+    .floating-hearts span {
       position: fixed;
-      bottom: -30px;
+      bottom: -40px;
       font-size: 22px;
-      animation: floatUp linear infinite;
-      opacity: 0.7;
       pointer-events: none;
-      z-index: 0;
+      animation: floatHeart linear infinite;
+      opacity: 0;
+      z-index: 1;
     }
-    .heart:nth-child(1) {
-      left: 8%;
+    .floating-hearts span:nth-child(1) {
+      left: 5%;
       animation-duration: 9s;
       animation-delay: 1s;
     }
-    .heart:nth-child(2) {
-      left: 25%;
+    .floating-hearts span:nth-child(2) {
+      left: 20%;
       animation-duration: 12s;
-      animation-delay: 3s;
-    }
-    .heart:nth-child(3) {
-      left: 48%;
-      animation-duration: 10s;
-      animation-delay: 0s;
-    }
-    .heart:nth-child(4) {
-      left: 70%;
-      animation-duration: 13s;
       animation-delay: 4s;
     }
-    .heart:nth-child(5) {
-      left: 88%;
-      animation-duration: 11s;
+    .floating-hearts span:nth-child(3) {
+      left: 40%;
+      animation-duration: 10s;
       animation-delay: 2s;
     }
-    @keyframes floatUp {
+    .floating-hearts span:nth-child(4) {
+      left: 60%;
+      animation-duration: 13s;
+      animation-delay: 5s;
+    }
+    .floating-hearts span:nth-child(5) {
+      left: 80%;
+      animation-duration: 11s;
+      animation-delay: 0s;
+    }
+    .floating-hearts span:nth-child(6) {
+      left: 92%;
+      animation-duration: 14s;
+      animation-delay: 3s;
+    }
+    @keyframes floatHeart {
       0% {
-        transform: translateY(0) scale(1);
+        transform: translateY(0) scale(0.8);
         opacity: 0;
       }
-      20% {
+      15% {
         opacity: 0.8;
       }
       100% {
-        transform: translateY(-110vh) scale(1.5);
+        transform: translateY(-115vh) scale(1.4) rotate(20deg);
         opacity: 0;
       }
     }
-    /* Opening screen */
-    .welcome {
+    /* =========================
+       MUSIC BUTTON
+    ========================= */
+    .music-button {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 20;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      color: white;
+      backdrop-filter: blur(10px);
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    /* =========================
+       OPENING
+    ========================= */
+    #opening {
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -74,200 +108,411 @@
       padding: 25px;
       text-align: center;
       position: relative;
-      z-index: 2;
+      z-index: 5;
     }
-    .welcome-box {
+    .opening-box {
       width: 100%;
       max-width: 650px;
-      padding: 45px 25px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 30px;
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      padding: 50px 25px;
+      border-radius: 35px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(15px);
+      box-shadow:
+        0 25px 80px rgba(0,0,0,0.5);
     }
-    .big-heart {
-      font-size: 65px;
-      animation: heartbeat 1.4s infinite;
+    .heart-big {
+      font-size: 75px;
       margin-bottom: 20px;
+      animation: heartbeat 1.4s infinite;
     }
     @keyframes heartbeat {
       0%, 100% {
         transform: scale(1);
       }
       50% {
-        transform: scale(1.18);
+        transform: scale(1.2);
       }
     }
-    .welcome h1 {
-      font-size: clamp(35px, 9vw, 65px);
-      line-height: 1.1;
-      margin-bottom: 15px;
+    .opening-box h1 {
+      font-size: clamp(38px, 10vw, 68px);
+      line-height: 1.05;
+      margin-bottom: 20px;
     }
-    .welcome p {
+    .opening-box .subtitle {
       font-family: Arial, sans-serif;
       font-size: 16px;
-      opacity: 0.85;
-      margin-bottom: 30px;
+      opacity: 0.8;
+      line-height: 1.7;
+      margin-bottom: 35px;
     }
     .open-button {
       border: none;
       border-radius: 50px;
-      padding: 16px 30px;
+      padding: 17px 32px;
+      background: white;
+      color: #8d1744;
       font-size: 17px;
       font-weight: bold;
-      background: #fff;
-      color: #8b173b;
       cursor: pointer;
-      transition: 0.3s ease;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: 0.3s;
     }
     .open-button:hover {
-      transform: scale(1.05);
+      transform: scale(1.06);
     }
-    /* Letter */
-    .letter-container {
+    /* =========================
+       MAIN WEBSITE
+    ========================= */
+    #main {
       display: none;
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 50px 20px 80px;
       position: relative;
-      z-index: 2;
+      z-index: 3;
     }
-    .letter {
-      background: rgba(255, 248, 250, 0.97);
-      color: #35121f;
-      border-radius: 25px;
-      padding: clamp(25px, 6vw, 60px);
-      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
     }
-    .letter-title {
+    .hero-content {
+      max-width: 750px;
+    }
+    .hero-small {
+      font-family: Arial, sans-serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 13px;
+      opacity: 0.7;
+      margin-bottom: 20px;
+    }
+    .hero h2 {
+      font-size: clamp(42px, 11vw, 80px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+    .hero p {
+      font-size: 20px;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+    .scroll-note {
+      margin-top: 45px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      opacity: 0.55;
+    }
+    /* =========================
+       PHOTO SECTION
+    ========================= */
+    .photos {
+      padding: 80px 20px;
+      max-width: 950px;
+      margin: auto;
+    }
+    .section-heading {
       text-align: center;
       margin-bottom: 45px;
     }
-    .letter-title .small-heart {
-      font-size: 35px;
-      margin-bottom: 10px;
-    }
-    .letter-title h2 {
+    .section-heading h3 {
       font-size: clamp(30px, 7vw, 48px);
-      line-height: 1.15;
-      color: #8b173b;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
-    .letter-title p {
+    .section-heading p {
       font-family: Arial, sans-serif;
-      color: #8b5366;
+      opacity: 0.7;
       font-size: 14px;
     }
-    .section {
-      margin-bottom: 35px;
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
     }
-    .section p {
-      font-size: 18px;
-      line-height: 1.9;
-      margin-bottom: 18px;
-    }
-    .section-break {
+    .photo {
+      min-height: 260px;
+      border-radius: 22px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, #5d102f, #270613);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      color: #c43d68;
-      font-size: 24px;
-      margin: 35px 0;
-      letter-spacing: 8px;
-    }
-    .highlight {
-      text-align: center;
-      font-size: 22px;
-      line-height: 1.7;
-      color: #8b173b;
-      font-style: italic;
-      margin: 35px 0;
-    }
-    .ending {
-      text-align: center;
-      padding-top: 25px;
-      border-top: 1px solid rgba(139, 23, 59, 0.2);
-    }
-    .ending p {
-      font-size: 21px;
-      line-height: 1.8;
-      margin-bottom: 10px;
-    }
-    .final-love {
-      font-size: 34px !important;
-      color: #8b173b;
-      font-weight: bold;
-      margin-top: 25px;
-    }
-    .ps {
-      margin-top: 35px;
       padding: 20px;
-      border-radius: 18px;
-      background: #fff0f4;
-      color: #8b173b;
-      font-size: 17px;
-      line-height: 1.7;
-      font-style: italic;
-    }
-    .back-button {
-      display: block;
-      margin: 35px auto 0;
-      border: 1px solid #8b173b;
-      background: transparent;
-      color: #8b173b;
-      border-radius: 30px;
-      padding: 12px 22px;
-      cursor: pointer;
+      color: rgba(255,255,255,0.7);
+      font-family: Arial, sans-serif;
       font-size: 14px;
+    }
+    .photo:first-child {
+      grid-column: span 2;
+      min-height: 350px;
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     @media (max-width: 600px) {
-      .letter-container {
-        padding: 20px 12px 50px;
+      .photo-grid {
+        grid-template-columns: 1fr;
       }
-      .letter {
-        padding: 25px 20px;
-        border-radius: 20px;
+      .photo:first-child {
+        grid-column: span 1;
       }
-      .section p {
-        font-size: 16.5px;
-        line-height: 1.85;
-      }
-      .highlight {
-        font-size: 19px;
-      }
+    }
+    /* =========================
+       LETTER
+    ========================= */
+    .letter-section {
+      padding: 70px 15px;
+    }
+    .letter {
+      max-width: 850px;
+      margin: auto;
+      background: #fff8fa;
+      color: #35121f;
+      border-radius: 28px;
+      padding: clamp(25px, 7vw, 65px);
+      box-shadow:
+        0 25px 80px rgba(0,0,0,0.45);
+    }
+    .letter-top {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .letter-top .emoji {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+    .letter-top h3 {
+      color: #8d1744;
+      font-size: clamp(32px, 8vw, 52px);
+      line-height: 1.1;
+    }
+    .letter-top p {
+      margin-top: 12px;
+      font-family: Arial, sans-serif;
+      color: #9a6477;
+      font-size: 13px;
+    }
+    .letter p {
+      font-size: 18px;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+    .divider {
+      text-align: center;
+      color: #c83b68;
+      font-size: 22px;
+      margin: 45px 0;
+      letter-spacing: 7px;
+    }
+    .quote {
+      text-align: center;
+      color: #8d1744;
+      font-size: 23px !important;
+      font-style: italic;
+      margin: 35px 0;
+    }
+    /* =========================
+       SPECIAL FIRST KISS
+    ========================= */
+    .kiss-section {
+      padding: 90px 20px;
+      text-align: center;
+      background:
+        radial-gradient(circle, #651134, #20030e);
+    }
+    .kiss-content {
+      max-width: 700px;
+      margin: auto;
+    }
+    .kiss-content .kiss {
+      font-size: 60px;
+      margin-bottom: 25px;
+    }
+    .kiss-content h3 {
+      font-size: clamp(32px, 8vw, 55px);
+      margin-bottom: 25px;
+    }
+    .kiss-content p {
+      font-size: 19px;
+      line-height: 1.8;
+      opacity: 0.9;
+      margin-bottom: 18px;
+    }
+    .kiss-line {
+      font-size: 24px !important;
+      margin-top: 35px;
+    }
+    /* =========================
+       FINAL MESSAGE
+    ========================= */
+    .ending {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .ending-content {
+      max-width: 700px;
+    }
+    .infinity {
+      font-size: 65px;
+      margin-bottom: 25px;
+    }
+    .ending h3 {
+      font-size: clamp(35px, 9vw, 65px);
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+    .ending p {
+      font-size: 19px;
+      line-height: 1.8;
+      opacity: 0.85;
+    }
+    .final-love {
+      margin-top: 35px;
+      font-size: 32px !important;
+      opacity: 1 !important;
+    }
+    .ps {
+      margin-top: 45px;
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 16px !important;
+      font-style: italic;
+    }
+    .footer {
+      text-align: center;
+      padding: 30px 20px 50px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      opacity: 0.4;
     }
   </style>
 </head>
 <body>
-  <!-- Floating hearts -->
-  <div class="heart">❤️</div>
-  <div class="heart">💗</div>
-  <div class="heart">💕</div>
-  <div class="heart">❤️</div>
-  <div class="heart">💖</div>
-  <!-- Welcome screen -->
-  <section class="welcome" id="welcome">
-    <div class="welcome-box">
-  <div class="big-heart">❤️</div>
-  <h1>Happy Birthday,<br>My Babyyyy</h1>
-  <p>
-    I made something special for you.
-    Take your time reading it. 🥹❤️
+  <!-- FLOATING HEARTS -->
+  <div class="floating-hearts">
+    <span>❤️</span>
+    <span>💕</span>
+    <span>💗</span>
+    <span>❤️</span>
+    <span>💖</span>
+    <span>💕</span>
+  </div>
+  <!-- MUSIC BUTTON -->
+  <button class="music-button" id="musicButton" onclick="toggleMusic()">
+    🎵
+  </button>
+  <!--
+    MUSIC:
+    Later we will add your MP3 file to GitHub.
+  -->
+  <audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+  <!-- =========================
+       OPENING SCREEN
+  ========================= -->
+  <section id="opening">
+<div class="opening-box">
+  <div class="heart-big">
+    ❤️
+  </div>
+  <h1>
+    Happy Birthday,<br>
+    My Babyyyy
+  </h1>
+  <p class="subtitle">
+    I made something for you.<br>
+    Something from my heart to yours. 🥹❤️
   </p>
-  <button class="open-button" onclick="openLetter()">
-    Open your letter 💌
+  <button class="open-button" onclick="openWebsite()">
+    Open your surprise 💌
   </button>
 </div>
   </section>
-  <!-- Birthday Letter -->
-  <main class="letter-container" id="letterContainer">
-<article class="letter">
-  <div class="letter-title">
-    <div class="small-heart">❤️</div>
-    <h2>Happy Birthday,<br>My Heart</h2>
-    <p>A little piece of my heart, written just for you.</p>
+  <!-- =========================
+       MAIN WEBSITE
+  ========================= -->
+  <div id="main">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-small">
+      A letter from me to you
+    </p>
+    <h2>
+      Happy Birthday,<br>
+      My Heart ❤️
+    </h2>
+    <p>
+      Today is about you.<br>
+      So take your time and read this...
+    </p>
+    <p class="scroll-note">
+      ↓ Keep scrolling, beautiful ↓
+    </p>
   </div>
-  <div class="section">
+</section>
+<!-- =========================
+     PHOTOS
+========================= -->
+<section class="photos">
+  <div class="section-heading">
+    <h3>
+      Our Little Memories 📸
+    </h3>
+    <p>
+      A few moments I'd love to keep forever.
+    </p>
+  </div>
+  <div class="photo-grid">
+    <!--
+      PHOTO 1
+      Later replace this box with your photo.
+    -->
+    <div class="photo">
+      📸<br><br>
+      Your favorite picture of her goes here ❤️
+    </div>
+    <!-- PHOTO 2 -->
+    <div class="photo">
+      📸<br><br>
+      Another memory 💕
+    </div>
+    <!-- PHOTO 3 -->
+    <div class="photo">
+      📸<br><br>
+      Another beautiful moment ❤️
+    </div>
+  </div>
+</section>
+<!-- =========================
+     LETTER
+========================= -->
+<section class="letter-section">
+  <article class="letter">
+    <div class="letter-top">
+      <div class="emoji">
+        💌
+      </div>
+      <h3>
+        For My Beautiful Girl
+      </h3>
+      <p>
+        Read this slowly. Every word is meant for you.
+      </p>
+    </div>
     <p>
       Happy Birthdayyyy, my babyyyy. ❤️🥹
     </p>
@@ -287,9 +532,9 @@
     <p>
       And honestly, I’m glad you did.
     </p>
-  </div>
-  <div class="section-break">❤️ • ❤️ • ❤️</div>
-  <div class="section">
+    <div class="divider">
+      ❤️ • ❤️ • ❤️
+    </div>
     <p>
       Sometimes I sit back and think about us and how strange it is that we got here.
     </p>
@@ -310,26 +555,24 @@
     <p>
       Look at you.
     </p>
-    <p class="highlight">
+    <p class="quote">
       My girl. ❤️
     </p>
-  </div>
-  <div class="section">
     <p>
       I don’t think you realize how many little things about you I’ve fallen in love with.
     </p>
     <p>
-      The way you talk.<br>
-      The way you laugh.<br>
+      The way you talk.
+      The way you laugh.
       The way you get excited about something and suddenly I’m listening to the whole story even if I had no idea what you were talking about five minutes ago.
     </p>
     <p>
       The way you can be so sweet one minute and then annoy me the next. 😭
     </p>
     <p>
-      The way you overthink.<br>
-      The way you care so deeply.<br>
-      The way you sometimes need reassurance even when you already know the answer.<br>
+      The way you overthink.
+      The way you care so deeply.
+      The way you sometimes need reassurance even when you already know the answer.
       The way you miss me and somehow make me miss you even more.
     </p>
     <p>
@@ -352,8 +595,8 @@
       You became a place I could just be myself.
     </p>
     <p>
-      No pretending.<br>
-      No trying too hard.<br>
+      No pretending.
+      No trying too hard.
       Just me and you.
     </p>
     <p>
@@ -370,9 +613,9 @@
     <p>
       And somehow, it’s still us.
     </p>
-  </div>
-  <div class="section-break">💗 • 💗 • 💗</div>
-  <div class="section">
+    <div class="divider">
+      💗 • 💗 • 💗
+    </div>
     <p>
       You have this way of making ordinary moments feel special.
     </p>
@@ -421,8 +664,6 @@
     <p>
       I’ll probably still call you “ma” and let Your Royal Highness have her moment. 😭❤️
     </p>
-  </div>
-  <div class="section">
     <p>
       But seriously, I hope this new year of your life is gentle with you.
     </p>
@@ -439,11 +680,9 @@
     <p>
       And selfishly…
     </p>
-    <p class="highlight">
+    <p class="quote">
       I hope I’m there for a lot of those memories.
     </p>
-  </div>
-  <div class="section">
     <p>
       I want more random calls.
       More late-night conversations.
@@ -456,7 +695,7 @@
     <p>
       And yes…
     </p>
-    <p class="highlight">
+    <p class="quote">
       I still think about that first kiss. 😭❤️
     </p>
     <p>
@@ -497,7 +736,7 @@
       After all the “what ifs.”
       After all the times we’ve imagined it.
     </p>
-    <p class="highlight">
+    <p class="quote">
       Just us.
     </p>
     <p>
@@ -509,9 +748,9 @@
     <p>
       I’m looking forward to that moment.
     </p>
-  </div>
-  <div class="section-break">❤️ • ❤️ • ❤️</div>
-  <div class="section">
+    <div class="divider">
+      ❤️ • ❤️ • ❤️
+    </div>
     <p>
       I’m looking forward to so many moments with you.
     </p>
@@ -544,8 +783,6 @@
     <p>
       Because with you, I think even the simple things would mean something.
     </p>
-  </div>
-  <div class="section">
     <p>
       And if I could give you one thing for your birthday, it wouldn’t be something I could wrap.
     </p>
@@ -564,7 +801,7 @@
     <p>
       Maybe you’d finally understand why I call you my girl.
     </p>
-    <p class="highlight">
+    <p class="quote">
       Because you are.
     </p>
     <p>
@@ -575,9 +812,9 @@
       My favorite person to hear from.
       And somehow, one of my favorite parts of my life.
     </p>
-  </div>
-  <div class="section-break">💖 • 💖 • 💖</div>
-  <div class="section">
+    <div class="divider">
+      💖 • 💖 • 💖
+    </div>
     <p>
       So today, I don’t just want to say happy birthday.
     </p>
@@ -611,11 +848,9 @@
       So many “I miss yous.”
       And yes…
     </p>
-    <p class="highlight">
+    <p class="quote">
       That first kiss we’ve talked about approximately 847 times. 😭❤️
     </p>
-  </div>
-  <div class="section">
     <p>
       I hope this birthday reminds you of how special you are.
     </p>
@@ -637,66 +872,115 @@
     <p>
       And I hope as you start this new chapter, you remember one thing:
     </p>
-    <p class="highlight">
+    <p class="quote">
       No matter how much you grow, how much changes, or how many birthdays come after this one…
     </p>
     <p>
       I’ll always be grateful that somewhere along the way, I found you.
     </p>
+  </article>
+</section>
+<!-- =========================
+     FIRST KISS SECTION
+========================= -->
+<section class="kiss-section">
+  <div class="kiss-content">
+    <div class="kiss">
+      💋❤️
+    </div>
+    <h3>
+      About That First Kiss...
+    </h3>
+    <p>
+      We've talked about it approximately 847 times. 😭
+    </p>
+    <p>
+      We've imagined it, joked about it,
+      and probably overthought it.
+    </p>
+    <p>
+      But when the moment finally comes,
+      I don't want it to be perfect.
+    </p>
+    <p>
+      I just want it to be ours.
+    </p>
+    <p class="kiss-line">
+      And yes, baby...<br>
+      I'm still looking forward to it. ❤️
+    </p>
   </div>
-  <div class="ending">
-    <p class="final-love">
-      Happy birthday, my babyyyy. ❤️🥹
-    </p>
+</section>
+<!-- =========================
+     FINAL MESSAGE
+========================= -->
+<section class="ending">
+  <div class="ending-content">
+    <div class="infinity">
+      ❤️♾️
+    </div>
+    <h3>
+      Happy Birthday,<br>
+      My Beautiful Girl
+    </h3>
     <p>
-      Happy birthday, my heart.
-    </p>
-    <p>
-      Happy birthday, my beautiful girl.
-    </p>
-    <p>
-      Happy birthday, my favorite headache. 😭
-    </p>
-    <p>
+      Happy birthday, my heart.<br>
+      Happy birthday, my beautiful girl.<br>
+      Happy birthday, my favorite headache. 😭<br>
       Happy birthday, mi corazón.
     </p>
-    <p>
-      Happy birthday to the girl who somehow became one of the most important people in my world.
+    <p style="margin-top: 25px;">
+      Happy birthday to the girl who somehow became
+      one of the most important people in my world.
     </p>
     <p class="final-love">
       I love you. ❤️
     </p>
-    <p>
-      And I can’t wait to see what this next chapter brings for you…
+    <p style="margin-top: 20px;">
+      And I can't wait to see what this next chapter
+      brings for you...
     </p>
     <p class="final-love">
       and for us. ❤️♾️
     </p>
     <div class="ps">
-      P.S. When that first kiss finally happens, don’t think I’m forgetting all the conversations we’ve had about it. 😭❤️
+      P.S. When that first kiss finally happens,
+      don't think I'm forgetting all the conversations
+      we've had about it. 😭❤️
     </div>
   </div>
-</article>
-<button class="back-button" onclick="goBack()">
-  Close letter ❤️
-</button>
-  </main>
+</section>
+<div class="footer">
+  Made with love, just for you. ❤️
+</div>
+  </div>
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
   <script>
-    function openLetter() {
-      document.getElementById("welcome").style.display = "none";
-      document.getElementById("letterContainer").style.display = "block";
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+    const music = document.getElementById("music");
+    const musicButton = document.getElementById("musicButton");
+    function openWebsite() {
+      document.getElementById("opening").style.display = "none";
+      document.getElementById("main").style.display = "block";
+      musicButton.style.display = "flex";
+      /*
+        We try to start the music after
+        the user taps the opening button.
+      */
+      music.play().catch(function() {
+        console.log("Music needs to be started manually.");
       });
+      window.scrollTo(0, 0);
     }
-    function goBack() {
-      document.getElementById("letterContainer").style.display = "none";
-      document.getElementById("welcome").style.display = "flex";
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        musicButton.innerHTML = "🔊";
+      } else {
+        music.pause();
+        musicButton.innerHTML = "🎵";
+      }
     }
   </script>
 </body>
