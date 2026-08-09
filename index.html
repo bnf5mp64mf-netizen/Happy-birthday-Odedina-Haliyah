@@ -3,300 +3,291 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday, My Babyyyy ❤️</title>
+<title>Happy Birthday My Babyyyy ❤️</title>
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-html{
-  scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
-body{
-  background:#120109;
-  color:white;
-  font-family:Georgia,"Times New Roman",serif;
-  overflow-x:hidden;
+body {
+  background: #120108;
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  overflow-x: hidden;
 }
-#opening{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:25px;
-  background:radial-gradient(circle at top,#75133d,#270510 55%,#100107);
+#opening {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+  background: radial-gradient(circle at top, #801642, #26040f 60%, #100107);
 }
-.opening-card{
-  max-width:650px;
-  width:100%;
-  padding:50px 25px;
-  border-radius:30px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.15);
-  backdrop-filter:blur(15px);
+.opening-card {
+  width: 100%;
+  max-width: 650px;
+  padding: 50px 25px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
 }
-.big-heart{
-  font-size:70px;
-  margin-bottom:20px;
-  animation:heartbeat 1.4s infinite;
+.heart {
+  font-size: 70px;
+  animation: beat 1.4s infinite;
+  margin-bottom: 20px;
 }
-@keyframes heartbeat{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.18)}
-}
-.opening-card h1{
-  font-size:clamp(40px,10vw,70px);
-  line-height:1.05;
-  margin-bottom:20px;
-}
-.opening-card p{
-  font-family:Arial,sans-serif;
-  line-height:1.7;
-  opacity:.8;
-  margin-bottom:30px;
-}
-.open-btn{
-  border:0;
-  border-radius:50px;
-  padding:16px 30px;
-  background:white;
-  color:#8c1745;
-  font-weight:bold;
-  font-size:16px;
-}
-#main{
-  display:none;
-}
-.music-btn{
-  position:fixed;
-  top:18px;
-  right:18px;
-  z-index:100;
-  width:52px;
-  height:52px;
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.3);
-  background:rgba(255,255,255,.13);
-  color:white;
-  font-size:21px;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  backdrop-filter:blur(10px);
-}
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:80px 20px;
-  background:radial-gradient(circle at top,#681334,#18020b 65%);
-}
-.hero-content{
-  max-width:750px;
-}
-.small-title{
-  font-family:Arial,sans-serif;
-  text-transform:uppercase;
-  letter-spacing:4px;
-  font-size:12px;
-  opacity:.6;
-  margin-bottom:20px;
-}
-.hero h2{
-  font-size:clamp(44px,11vw,82px);
-  line-height:1.05;
-  margin-bottom:25px;
-}
-.hero p{
-  font-size:19px;
-  line-height:1.8;
-  opacity:.85;
-}
-.gallery{
-  padding:80px 18px;
-  max-width:1000px;
-  margin:auto;
-}
-.heading{
-  text-align:center;
-  margin-bottom:40px;
-}
-.heading h3{
-  font-size:clamp(32px,8vw,52px);
-  margin-bottom:12px;
-}
-.heading p{
-  font-family:Arial,sans-serif;
-  opacity:.65;
-  font-size:14px;
-}
-.photo-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:15px;
-}
-.photo{
-  height:280px;
-  border-radius:22px;
-  overflow:hidden;
-  background:#310817;
-  border:1px solid rgba(255,255,255,.15);
-}
-.photo:first-child{
-  grid-column:span 2;
-  height:390px;
-}
-.photo img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-}
-@media(max-width:600px){
-  .photo-grid{
-    grid-template-columns:1fr;
-  }
-  .photo:first-child{
-    grid-column:span 1;
-    height:360px;
-  }
-  .photo{
-    height:300px;
+@keyframes beat {
+  50% {
+    transform: scale(1.15);
   }
 }
-.letter-area{
-  padding:70px 15px;
+.opening-card h1 {
+  font-size: clamp(42px, 11vw, 75px);
+  line-height: 1;
+  margin-bottom: 25px;
 }
-.letter{
-  max-width:850px;
-  margin:auto;
-  background:#fff8fa;
-  color:#35121f;
-  border-radius:30px;
-  padding:clamp(25px,7vw,65px);
-  box-shadow:0 30px 90px rgba(0,0,0,.45);
+.opening-card p {
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  opacity: .8;
+  margin-bottom: 30px;
 }
-.letter-title{
-  text-align:center;
-  margin-bottom:50px;
+.open-btn {
+  border: none;
+  border-radius: 50px;
+  padding: 16px 30px;
+  background: white;
+  color: #8b1745;
+  font-size: 16px;
+  font-weight: bold;
 }
-.letter-title .icon{
-  font-size:42px;
-  margin-bottom:15px;
+#main {
+  display: none;
 }
-.letter-title h3{
-  color:#8d1744;
-  font-size:clamp(32px,8vw,52px);
+.music-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1000;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.3);
+  background: rgba(100,10,50,.85);
+  color: white;
+  font-size: 22px;
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
-.letter-title p{
-  font-family:Arial,sans-serif;
-  color:#9b6678;
-  font-size:13px;
-  margin-top:10px;
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  background: radial-gradient(circle at top, #681334, #18020b 65%);
 }
-.letter p{
-  font-size:18px;
-  line-height:1.9;
-  margin-bottom:22px;
+.hero-content {
+  max-width: 750px;
 }
-.special{
-  text-align:center;
-  color:#8d1744;
-  font-size:24px!important;
-  font-style:italic;
+.small {
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  opacity: .6;
+  margin-bottom: 20px;
 }
-.divider{
-  text-align:center;
-  color:#c83267;
-  font-size:22px;
-  margin:40px 0;
+.hero h2 {
+  font-size: clamp(45px, 11vw, 85px);
+  line-height: 1;
+  margin-bottom: 25px;
 }
-.kiss{
-  padding:100px 20px;
-  text-align:center;
-  background:radial-gradient(circle,#70143c,#21030f 65%);
+.hero p {
+  font-size: 19px;
+  line-height: 1.8;
+  opacity: .85;
 }
-.kiss-content{
-  max-width:700px;
-  margin:auto;
+.section {
+  padding: 80px 18px;
+  max-width: 1000px;
+  margin: auto;
 }
-.kiss-icon{
-  font-size:65px;
-  margin-bottom:25px;
+.heading {
+  text-align: center;
+  margin-bottom: 40px;
 }
-.kiss h3{
-  font-size:clamp(35px,9vw,58px);
-  margin-bottom:25px;
+.heading h3 {
+  font-size: clamp(32px, 8vw, 52px);
+  margin-bottom: 12px;
 }
-.kiss p{
-  font-size:19px;
-  line-height:1.8;
-  opacity:.9;
-  margin-bottom:18px;
+.heading p {
+  font-family: Arial, sans-serif;
+  opacity: .65;
 }
-.ending{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:80px 20px;
+.photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
 }
-.ending-content{
-  max-width:700px;
+.photo {
+  height: 290px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #350817;
 }
-.infinity{
-  font-size:65px;
-  margin-bottom:25px;
+.photo:first-child {
+  grid-column: span 2;
+  height: 390px;
 }
-.ending h3{
-  font-size:clamp(38px,10vw,68px);
-  line-height:1.05;
-  margin-bottom:30px;
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
-.ending p{
-  font-size:19px;
-  line-height:1.8;
-  opacity:.85;
+.letter {
+  max-width: 850px;
+  margin: auto;
+  background: #fff8fa;
+  color: #35121f;
+  border-radius: 30px;
+  padding: clamp(25px, 7vw, 65px);
 }
-.love{
-  font-size:34px!important;
-  opacity:1!important;
-  margin-top:30px;
+.letter-title {
+  text-align: center;
+  margin-bottom: 45px;
 }
-.ps{
-  margin-top:45px;
-  padding:20px;
-  border-radius:18px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.12);
-  font-size:15px!important;
-  font-style:italic;
+.letter-title div {
+  font-size: 45px;
+  margin-bottom: 15px;
 }
-footer{
-  text-align:center;
-  padding:30px;
-  font-family:Arial,sans-serif;
-  font-size:11px;
-  opacity:.4;
+.letter-title h3 {
+  color: #8d1744;
+  font-size: clamp(32px, 8vw, 52px);
+}
+.letter-title p {
+  font-family: Arial, sans-serif;
+  color: #9b6678;
+  font-size: 13px;
+  margin-top: 10px;
+}
+.letter p {
+  font-size: 18px;
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+.special {
+  text-align: center;
+  color: #8d1744;
+  font-size: 24px !important;
+  font-style: italic;
+}
+.divider {
+  text-align: center;
+  color: #c83267;
+  font-size: 22px;
+  margin: 40px 0;
+}
+.kiss {
+  padding: 100px 20px;
+  text-align: center;
+  background: radial-gradient(circle, #70143c, #21030f 65%);
+}
+.kiss div {
+  max-width: 700px;
+  margin: auto;
+}
+.kiss .icon {
+  font-size: 65px;
+  margin-bottom: 25px;
+}
+.kiss h3 {
+  font-size: clamp(35px, 9vw, 58px);
+  margin-bottom: 25px;
+}
+.kiss p {
+  font-size: 19px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+.end {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+.end-content {
+  max-width: 700px;
+}
+.infinity {
+  font-size: 65px;
+  margin-bottom: 25px;
+}
+.end h3 {
+  font-size: clamp(38px, 10vw, 68px);
+  line-height: 1.05;
+  margin-bottom: 30px;
+}
+.end p {
+  font-size: 19px;
+  line-height: 1.8;
+  opacity: .85;
+}
+.love {
+  font-size: 34px !important;
+  opacity: 1 !important;
+  margin-top: 30px;
+}
+.ps {
+  margin-top: 45px;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.08);
+  font-size: 15px !important;
+  font-style: italic;
+}
+footer {
+  text-align: center;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  opacity: .4;
+}
+@media (max-width: 600px) {
+  .photos {
+    grid-template-columns: 1fr;
+  }
+  .photo:first-child {
+    grid-column: span 1;
+    height: 360px;
+  }
+  .photo {
+    height: 300px;
+  }
 }
 </style>
 </head>
 <body>
 <section id="opening">
 <div class="opening-card">
-<div class="big-heart">❤️</div>
+<div class="heart">❤️</div>
 <h1>
 Happy Birthday,<br>
 My Babyyyy
 </h1>
 <p>
 I made something special for you.<br>
-Something from my heart to yours. 🥹❤️
+Something straight from my heart. 🥹❤️
 </p>
 <button class="open-btn" onclick="openSurprise()">
 Open Your Surprise 💌
@@ -307,12 +298,12 @@ Open Your Surprise 💌
 🎵
 </button>
 <audio id="music" loop preload="auto">
-<source src="./music.mp3" type="audio/mpeg">
+<source src="https://bnf5mp64mf-netizen.github.io/Happy-birthday-Odedina-Haliyah/music.mp3" type="audio/mpeg">
 </audio>
 <main id="main">
 <section class="hero">
 <div class="hero-content">
-<div class="small-title">
+<div class="small">
 A letter from me to you
 </div>
 <h2>
@@ -325,37 +316,33 @@ So take your time and read this...
 </p>
 </div>
 </section>
-<section class="gallery">
+<section class="section">
 <div class="heading">
-<h3>
-Our Little Memories 📸
-</h3>
-<p>
-Some moments I would love to keep forever.
-</p>
+<h3>Our Little Memories 📸</h3>
+<p>Some moments I would love to keep forever.</p>
 </div>
-<div class="photo-grid">
+<div class="photos">
 <div class="photo">
-<img src="IMG_6158.png" alt="Beautiful memory">
+<img src="IMG_6158.png" alt="Memory">
 </div>
 <div class="photo">
-<img src="IMG_6117.png" alt="Beautiful memory">
+<img src="IMG_6117.png" alt="Memory">
 </div>
 <div class="photo">
-<img src="IMG_6106.png" alt="Beautiful memory">
+<img src="IMG_6106.png" alt="Memory">
 </div>
 <div class="photo">
-<img src="IMG_6029.png" alt="Beautiful memory">
+<img src="IMG_6029.png" alt="Memory">
 </div>
 <div class="photo">
-<img src="IMG_6689.png" alt="Beautiful memory">
+<img src="IMG_6689.png" alt="Memory">
 </div>
 </div>
 </section>
-<section class="letter-area">
+<section class="section">
 <article class="letter">
 <div class="letter-title">
-<div class="icon">💌</div>
+<div>💌</div>
 <h3>
 For My Beautiful Girl
 </h3>
@@ -363,25 +350,17 @@ For My Beautiful Girl
 Read this slowly. Every word is meant for you.
 </p>
 </div>
-<p>
-Happy Birthdayyyy, my babyyyy. ❤️🥹
-</p>
+<p>Happy Birthdayyyy, my babyyyy. ❤️🥹</p>
 <p>
 I honestly don’t even know where to start because every time I try to put how I feel about you into words, I realize there’s just too much to say.
 </p>
-<p>
-But today is your day, so let me try.
-</p>
-<p>
-Happy birthday, my heart. ❤️
-</p>
+<p>But today is your day, so let me try.</p>
+<p>Happy birthday, my heart. ❤️</p>
 <p>
 Another year of you.<br>
 Another year of the beautiful, stubborn, dramatic, caring, overthinking, ridiculously adorable girl that somehow found her way into my heart and decided to stay there.
 </p>
-<p>
-And honestly, I’m glad you did.
-</p>
+<p>And honestly, I’m glad you did.</p>
 <div class="divider">❤️ • ❤️ • ❤️</div>
 <p>
 Sometimes I sit back and think about us and how strange it is that we got here.
@@ -397,15 +376,9 @@ A person I wanted to hear from.
 A person whose mood could affect mine.
 A person whose “good morning” could genuinely make my morning better.
 </p>
-<p>
-And now look at us.
-</p>
-<p>
-Look at you.
-</p>
-<p class="special">
-My girl. ❤️
-</p>
+<p>And now look at us.</p>
+<p>Look at you.</p>
+<p class="special">My girl. ❤️</p>
 <p>
 I don’t think you realize how many little things about you I’ve fallen in love with.
 </p>
@@ -423,9 +396,7 @@ The way you care so deeply.
 The way you sometimes need reassurance even when you already know the answer.
 The way you miss me and somehow make me miss you even more.
 </p>
-<p>
-I love the little things.
-</p>
+<p>I love the little things.</p>
 <p>
 I love our random conversations.
 Our calls.
@@ -439,14 +410,8 @@ I love how comfortable you’ve become with me.
 <p>
 And I hope you know how comfortable I’ve become with you too.
 </p>
-<p>
-You became a place I could just be myself.
-</p>
-<p>
-No pretending.
-No trying too hard.
-Just me and you.
-</p>
+<p>You became a place I could just be myself.</p>
+<p>No pretending.<br>No trying too hard.<br>Just me and you.</p>
 <p>
 And maybe that’s one of the things I love most about us.
 </p>
@@ -458,9 +423,7 @@ We can annoy each other.
 We can miss each other.
 We can be quiet.
 </p>
-<p>
-And somehow, it’s still us.
-</p>
+<p>And somehow, it’s still us.</p>
 <div class="divider">💗 • 💗 • 💗</div>
 <p>
 You have this way of making ordinary moments feel special.
@@ -468,12 +431,8 @@ You have this way of making ordinary moments feel special.
 <p>
 And I don’t know if I’ll ever be able to properly explain what that means to me.
 </p>
-<p>
-But since it’s your birthday, I’m going to try.
-</p>
-<p>
-I want you to know that I’m proud of you.
-</p>
+<p>But since it’s your birthday, I’m going to try.</p>
+<p>I want you to know that I’m proud of you.</p>
 <p>
 Not just for the things you’ve achieved, but for the person you’re becoming.
 </p>
@@ -489,24 +448,16 @@ The side that pretends she’s okay sometimes.
 <p>
 And I want you to know that you never have to pretend with me.
 </p>
-<p>
-If you’re happy, I want to celebrate with you.
-</p>
-<p>
-If you’re sad, I want to sit with you.
-</p>
-<p>
-If you’re confused, I’ll listen.
-</p>
+<p>If you’re happy, I want to celebrate with you.</p>
+<p>If you’re sad, I want to sit with you.</p>
+<p>If you’re confused, I’ll listen.</p>
 <p>
 If you’re scared, I’ll remind you that you don’t have to figure everything out alone.
 </p>
 <p>
 And if you’re being dramatic…
 </p>
-<p>
-Well.
-</p>
+<p>Well.</p>
 <p>
 I’ll probably still call you “ma” and let Your Royal Highness have her moment. 😭❤️
 </p>
@@ -523,9 +474,7 @@ I hope you make beautiful memories.
 I hope you discover new things about yourself.
 And I hope you always remember that you are deeply loved.
 </p>
-<p>
-And selfishly…
-</p>
+<p>And selfishly…</p>
 <p class="special">
 I hope I’m there for a lot of those memories.
 </p>
@@ -538,9 +487,7 @@ More “I miss you.”
 More “come here.”
 More moments where we look at each other and don’t even need to say anything.
 </p>
-<p>
-And yes…
-</p>
+<p>And yes…</p>
 <p class="special">
 I still think about that first kiss. 😭❤️
 </p>
@@ -552,9 +499,7 @@ We’ve imagined the moment.
 We’ve talked about how nervous we’d probably be.
 We’ve joked about who would make the first move.
 </p>
-<p>
-And honestly?
-</p>
+<p>And honestly?</p>
 <p>
 I don’t know what’s going to happen when that moment finally comes.
 </p>
@@ -564,30 +509,18 @@ Maybe we’ll laugh.
 Maybe we’ll stare at each other for way too long.
 Maybe one of us will suddenly forget every single thing we’ve ever said about it. 😭
 </p>
-<p>
-But I do know one thing.
-</p>
+<p>But I do know one thing.</p>
 <p>
 When it finally happens, I want it to be one of those moments neither of us forgets.
 </p>
-<p>
-Not because it has to be perfect.
-</p>
-<p>
-But because it’s ours.
-</p>
-<p class="special">
-Just us. ❤️
-</p>
+<p>Not because it has to be perfect.</p>
+<p>But because it’s ours.</p>
+<p class="special">Just us. ❤️</p>
 <p>
 And knowing us, we’ll probably laugh immediately afterwards because we’ll both be too shy to act normal. 😭❤️
 </p>
-<p>
-But honestly, baby…
-</p>
-<p>
-I’m looking forward to that moment.
-</p>
+<p>But honestly, baby…</p>
+<p>I’m looking forward to that moment.</p>
 <div class="divider">❤️ • ❤️ • ❤️</div>
 <p>
 I’m looking forward to so many moments with you.
@@ -599,15 +532,11 @@ The first time we take pictures together and actually look like an annoying coup
 The first time we fall asleep beside each other.
 The first time we look at each other and realize, “Damn… we really made it here.”
 </p>
-<p>
-I want all of those memories with you.
-</p>
+<p>I want all of those memories with you.</p>
 <p>
 Because you’re not just someone I want to love in the big moments.
 </p>
-<p>
-I want you in the ordinary ones too.
-</p>
+<p>I want you in the ordinary ones too.</p>
 <p>
 The boring Tuesdays.
 The random afternoons.
@@ -615,9 +544,7 @@ The sleepy calls.
 The “what are you eating?” conversations.
 The days where nothing happens.
 </p>
-<p>
-I want the simple things.
-</p>
+<p>I want the simple things.</p>
 <p>
 Because with you, I think even the simple things would mean something.
 </p>
@@ -636,12 +563,8 @@ Why your voice calms me.
 Why your presence matters to me.
 Why I miss you even when we literally just finished talking.
 </p>
-<p>
-Maybe you’d finally understand why I call you my girl.
-</p>
-<p class="special">
-Because you are.
-</p>
+<p>Maybe you’d finally understand why I call you my girl.</p>
+<p class="special">Because you are.</p>
 <p>
 You’re my girl.
 My favorite person to annoy.
@@ -654,9 +577,7 @@ And somehow, one of my favorite parts of my life.
 <p>
 So today, I don’t just want to say happy birthday.
 </p>
-<p>
-I want to say thank you.
-</p>
+<p>I want to say thank you.</p>
 <p>
 Thank you for choosing me.
 Thank you for trusting me.
@@ -666,15 +587,9 @@ Thank you for every laugh.
 Thank you for every late-night call.
 Thank you for every little memory we’ve already made.
 </p>
-<p>
-And thank you for all the memories we haven’t made yet.
-</p>
-<p>
-Because I know we’re not done.
-</p>
-<p>
-There are still so many firsts waiting for us.
-</p>
+<p>And thank you for all the memories we haven’t made yet.</p>
+<p>Because I know we’re not done.</p>
+<p>There are still so many firsts waiting for us.</p>
 <p>
 So many places.
 So many conversations.
@@ -687,21 +602,15 @@ And yes…
 <p class="special">
 That first kiss we’ve talked about approximately 847 times. 😭❤️
 </p>
-<p>
-I hope this birthday reminds you of how special you are.
-</p>
+<p>I hope this birthday reminds you of how special you are.</p>
 <p>
 Not just to me, but to everyone lucky enough to have you in their life.
 </p>
-<p>
-But if I’m being completely honest…
-</p>
+<p>But if I’m being completely honest…</p>
 <p>
 I hope you always know that you have a very special place in mine.
 </p>
-<p>
-I love you, baby.
-</p>
+<p>I love you, baby.</p>
 <p>
 More than I probably know how to explain properly.
 </p>
@@ -717,11 +626,9 @@ I’ll always be grateful that somewhere along the way, I found you.
 </article>
 </section>
 <section class="kiss">
-<div class="kiss-content">
-<div class="kiss-icon">💋❤️</div>
-<h3>
-About That First Kiss...
-</h3>
+<div>
+<div class="icon">💋❤️</div>
+<h3>About That First Kiss...</h3>
 <p>
 We've talked about it approximately 847 times. 😭
 </p>
@@ -733,20 +640,16 @@ and probably overthought it.
 But when the moment finally comes,
 I don't want it to be perfect.
 </p>
-<p>
-I just want it to be ours.
-</p>
+<p>I just want it to be ours.</p>
 <p class="special">
 And yes, baby...<br>
 I'm still looking forward to it. ❤️
 </p>
 </div>
 </section>
-<section class="ending">
-<div class="ending-content">
-<div class="infinity">
-❤️♾️
-</div>
+<section class="end">
+<div class="end-content">
+<div class="infinity">❤️♾️</div>
 <h3>
 Happy Birthday,<br>
 My Beautiful Girl
@@ -761,16 +664,12 @@ Happy birthday, mi corazón.
 Happy birthday to the girl who somehow became
 one of the most important people in my world.
 </p>
-<p class="love">
-I love you. ❤️
-</p>
+<p class="love">I love you. ❤️</p>
 <p style="margin-top:20px;">
 And I can't wait to see what this next chapter
 brings for you...
 </p>
-<p class="love">
-and for us. ❤️♾️
-</p>
+<p class="love">and for us. ❤️♾️</p>
 <div class="ps">
 P.S. When that first kiss finally happens,
 don't think I'm forgetting all the conversations
@@ -785,26 +684,26 @@ Made with love, just for you. ❤️
 <script>
 const music = document.getElementById("music");
 const musicButton = document.getElementById("musicButton");
-function openSurprise(){
-  document.getElementById("opening").style.display="none";
-  document.getElementById("main").style.display="block";
-  musicButton.style.display="flex";
-  window.scrollTo(0,0);
+function openSurprise() {
+  document.getElementById("opening").style.display = "none";
+  document.getElementById("main").style.display = "block";
+  musicButton.style.display = "flex";
+  window.scrollTo(0, 0);
 }
-function toggleMusic(){
-  if(music.paused){
+function toggleMusic() {
+  if (music.paused) {
     music.play()
-    .then(function(){
-      musicButton.innerHTML="🔊";
+    .then(function() {
+      musicButton.innerHTML = "🔊";
     })
-    .catch(function(error){
+    .catch(function(error) {
       console.log(error);
-      musicButton.innerHTML="❌";
-      alert("The music could not play. Please check that music.mp3 is uploaded correctly.");
+      musicButton.innerHTML = "❌";
+      alert("The music could not play. Please check music.mp3.");
     });
-  }else{
+  } else {
     music.pause();
-    musicButton.innerHTML="🎵";
+    musicButton.innerHTML = "🎵";
   }
 }
 </script>
